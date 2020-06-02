@@ -1,0 +1,105 @@
+@import "constants.less";
+@import "globals.less";
+
+@picture-width: 1000px;
+
+.body {
+  margin: 0;
+  
+  .header-container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+
+  .content-container {
+    margin-top: @top-bar-height;
+    min-height: 100vh;
+
+    .slideshow-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: @picture-width;
+      transform: translate(-50%, -50%);
+
+      .visible-container {
+        width: @picture-width;
+        overflow-x: hidden;
+        .images {
+          display: flex;
+          transition: transform 0.5s;
+          .image {
+            width: @picture-width;
+          }
+        }
+      }
+
+      .button {
+        height: 100%;
+        width: 50px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        background-color: rgba(0,0,0,0.5);
+        transition: all 0.2s;
+        z-index: 1;
+
+        &.left {
+          left: 0;
+        }
+
+        &.right {
+          right: 0;
+        }
+
+        i {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          border: solid white;
+           border-width: 0 3px 3px 0;
+          display: inline-block;
+           padding: 3px;
+
+           &.right-arrow {
+             transform: rotate(-45deg);
+             -webkit-transform: rotate(-45deg);
+          }
+
+          &.left-arrow {
+             transform: rotate(135deg);
+              -webkit-transform: rotate(135deg);
+          }
+        }
+
+        &:hover {
+          background-color: rgba(0,0,0,0.7);
+        }
+      }
+
+      .dots {
+        display: flex;
+        position: absolute;
+          left: 50%;
+          bottom: -30px;
+          transform: translate(-50%, -50%);
+        .dot {
+          cursor: pointer;
+          height: 8px;
+          width: 8px;
+          background-color: @main-color;
+          border-radius: 4px;
+          margin: 0px 5px;
+
+          &.selected {
+            background-color: #a1dcff;
+          }
+        }
+      }
+    }  
+  }
+}

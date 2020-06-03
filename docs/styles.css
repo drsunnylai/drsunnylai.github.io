@@ -370,9 +370,13 @@ a {
   .body .content-container {
     margin-top: 0;
   }
+  .body .content-container .home-page .title-container {
+    height: 80%;
+  }
   .body .content-container .home-page .title-container .title-text {
     width: 95%;
     padding: 75px 0;
+    transform: translate(-50%, -25%);
   }
   .body .content-container .home-page .home-content .services .services-list .service {
     width: 35vw;

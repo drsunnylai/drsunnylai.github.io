@@ -3,5 +3,5 @@
   echo "Processing $line"
   filename=$(basename -- "$line")
   ext_filename=${filename%.less}.css
-  lessc $line public_html/$ext_filename
+  lessc $line docs/$ext_filename
 done

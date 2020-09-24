@@ -177,52 +177,70 @@ a {
   margin-top: 50px;
   min-height: 100vh;
 }
-.body .content-container .credentials-page .credentials-content .content {
+.body .content-container .about-page .about-content .content {
   padding: 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.body .content-container .credentials-page .credentials-content .content:nth-child(odd) {
+.body .content-container .about-page .about-content .content:nth-child(odd) {
   background-color: #f5f5f5;
 }
-.body .content-container .credentials-page .credentials-content .content:nth-child(even) {
+.body .content-container .about-page .about-content .content:nth-child(even) {
   background-color: white;
 }
-.body .content-container .credentials-page .credentials-content .content .title {
+.body .content-container .about-page .about-content .content .title {
   font-size: 40px;
   color: #25477b;
   font-weight: 700;
   margin-bottom: 30px;
 }
 @media all and (orientation: portrait), (max-width: 1350px) {
-  .body .content-container .credentials-page .credentials-content .content .title {
+  .body .content-container .about-page .about-content .content .title {
     font-size: 40px;
   }
 }
-.body .content-container .credentials-page .credentials-content .content .text {
+.body .content-container .about-page .about-content .content .text {
   font-size: 20px;
   max-width: 950px;
   text-align: justify;
 }
 @media all and (orientation: portrait), (max-width: 1350px) {
-  .body .content-container .credentials-page .credentials-content .content .text {
+  .body .content-container .about-page .about-content .content .text {
     font-size: 30px;
   }
 }
-.body .content-container .credentials-page .credentials-content .content:nth-child(odd) {
+.body .content-container .about-page .about-content .content:nth-child(odd) {
   background-color: #f5f5f5;
 }
-.body .content-container .credentials-page .credentials-content .content:nth-child(even) {
+.body .content-container .about-page .about-content .content:nth-child(even) {
   background-color: white;
 }
-.body .content-container .credentials-page .credentials-content .memberships-list {
+.body .content-container .about-page .about-content .content.associate {
+  padding: 0;
+  padding-left: 100px;
+  flex-direction: row;
+  height: 70%;
+}
+.body .content-container .about-page .about-content .content.associate .left {
+  flex: 0 1 70%;
+  padding-right: 20px;
+}
+.body .content-container .about-page .about-content .content.associate .right {
+  background-image: url("assets/liou.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  flex: 1 0 0px;
+  height: 100%;
+}
+.body .content-container .about-page .about-content .memberships-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
 }
-.body .content-container .credentials-page .credentials-content .memberships-list .membership {
+.body .content-container .about-page .about-content .memberships-list .membership {
   text-align: center;
   display: flex;
   align-items: center;
@@ -236,39 +254,36 @@ a {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: transform 0.2s;
 }
-.body .content-container .credentials-page .credentials-content .memberships-list .membership .logo {
+.body .content-container .about-page .about-content .memberships-list .membership .logo {
   width: 300px;
   height: 100px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
-.body .content-container .credentials-page .credentials-content .memberships-list .membership .logo.acfas {
+.body .content-container .about-page .about-content .memberships-list .membership .logo.acfas {
   background-image: url("assets/acfas_logo.jpg");
 }
-.body .content-container .credentials-page .credentials-content .memberships-list .membership .logo.apma {
+.body .content-container .about-page .about-content .memberships-list .membership .logo.apma {
   background-image: url("assets/american_podiatric_medical_association.png");
 }
-.body .content-container .credentials-page .credentials-content .memberships-list .membership .logo.bcpma {
+.body .content-container .about-page .about-content .memberships-list .membership .logo.bcpma {
   background-image: url("assets/bc_podiatric_medical_association.png");
 }
-.body .content-container .credentials-page .credentials-content .memberships-list .membership .logo.cpma {
+.body .content-container .about-page .about-content .memberships-list .membership .logo.cpma {
   background-image: url("assets/canadian_podiatric_medical_association.png");
 }
-.body .content-container .credentials-page .credentials-content .memberships-list .membership .logo.cpsbc {
+.body .content-container .about-page .about-content .memberships-list .membership .logo.cpsbc {
   background-image: url("assets/college_physicians_surgeons_bc.png");
 }
-.body .content-container .credentials-page .credentials-content .memberships-list .membership .with-text {
-  display: flex;
-}
-.body .content-container .credentials-page .credentials-content .memberships-list .membership:hover {
+.body .content-container .about-page .about-content .memberships-list .membership:hover {
   transform: translateY(-15px);
 }
-.body .content-container .credentials-page .credentials-content .qualifications .qualifications-list {
+.body .content-container .about-page .about-content .qualifications .qualifications-list {
   font-size: 20px;
 }
 @media all and (orientation: portrait), (max-width: 1350px) {
-  .body .content-container .credentials-page .credentials-content .qualifications .qualifications-list {
+  .body .content-container .about-page .about-content .qualifications .qualifications-list {
     font-size: 30px;
   }
 }
@@ -277,20 +292,18 @@ a {
     height: 100%;
     width: initial;
   }
-  .body .content-container .home-page .title-container .title-text {
-    width: 95%;
-    padding: 75px 0;
+  .body .content-container .about-page .about-content .content.associate {
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 100px 0;
   }
-  .body .content-container .home-page .home-content .services .services-list .service {
-    width: 35vw;
+  .body .content-container .about-page .about-content .content.associate .left {
+    padding-right: 0px;
   }
-  .body .content-container .home-page .home-content .content .button {
-    font-size: 40px;
-    width: 60%;
-  }
-}
-@media all and (orientation: portrait) and all and (orientation: portrait), (max-width: 1350px) and all and (orientation: portrait), all and (orientation: portrait) and (max-width: 1350px), (max-width: 1350px) and (max-width: 1350px) {
-  .body .content-container .home-page .home-content .content .button {
-    font-size: 40px;
+  .body .content-container .about-page .about-content .content.associate .right {
+    width: 375px;
+    height: 500px;
+    flex: 1 1 auto;
+    padding-bottom: 100px;
   }
 }

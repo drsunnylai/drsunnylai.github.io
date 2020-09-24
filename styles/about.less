@@ -14,10 +14,10 @@
     margin-top: @top-bar-height;
     min-height: 100vh;
 
-    .credentials-page {    
-      .credentials-content {
+    .about-page {    
+      .about-content {
         .content {
-          padding: 100px 0;
+          padding: @standard-padding 0;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -43,6 +43,27 @@
           }
           &:nth-child(even) {
             background-color: white;
+          }
+
+          &.associate {
+            padding: 0;
+            padding-left: @standard-padding;
+            flex-direction: row;
+            // Height must be defined so child empty div can match the height
+            height: 70%;
+            .left {
+              flex: 0 1 70%;
+              padding-right: 20px;
+            }
+
+            .right {
+              background-image: url("assets/liou.jpg");
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: right;
+              flex: 1 0 0px;
+              height: 100%;
+            }
           }
         }
         .memberships-list {
@@ -111,25 +132,25 @@
       width: initial;
     }
     .content-container {
-      .home-page {
-        .title-container {
-          .title-text {
-            width: 95%;
-            padding: 75px 0;
-          }
-        }
-        .home-content {
-          .services {
-            .services-list {
-              .service {
-                width: 35vw;
-              }
-            }
-          }
+      .about-page {    
+        .about-content {
           .content {
-            .button {
-              .med-font();
-              width: 60%;
+            &.associate {
+              flex-direction: column-reverse;
+              height: auto;
+              padding: @standard-padding 0;
+              
+              .left {
+                padding-right: 0px;
+              }
+
+              .right {
+                // Lazily hardcoded because stretching empty divs within flexbox is not very well supported
+                width: 375px;
+                height: 500px;
+                flex: 1 1 auto;
+                padding-bottom: @standard-padding;
+              }
             }
           }
         }

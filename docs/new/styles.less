@@ -6,6 +6,31 @@
 @medium-font-size: 28px;
 @body-font-size: 18px;
 
+@mobile-header-font-size: 60px;
+@mobile-medium-font-size: 45px;
+@mobile-body-font-size: 32px;
+
+.header-font-size() {
+  font-size: @header-font-size;
+  @media all and (orientation: portrait), (max-width: 1350px) {
+    font-size: @mobile-header-font-size;
+  }
+}
+
+.medium-font-size() {
+  font-size: @medium-font-size;
+  @media all and (orientation: portrait), (max-width: 1350px) {
+    font-size: @mobile-medium-font-size;
+  }
+}
+
+.body-font-size() {
+  font-size: @body-font-size;
+  @media all and (orientation: portrait), (max-width: 1350px) {
+    font-size: @mobile-body-font-size;
+  }
+}
+
 @content-padding: 30px;
 
 @image-side-length: 237px;
@@ -26,12 +51,12 @@ body {
 .title-text {
   color: @teal;
   font-weight: 700;
-  font-size: @header-font-size;
+  .header-font-size();
 }
 
 .body-text {
   color: @body-text-color;
-  font-size: @body-font-size;
+  .body-font-size();
   font-weight: 300;
 }
 
@@ -54,6 +79,7 @@ body {
   align-items: center;
   font-weight: 300;
   transition: background-color 0.3s;
+  .body-font-size();
   color: white;
   a {
     color: white;
@@ -100,6 +126,7 @@ body {
   align-items: center;
   position: relative;
   color: white;
+  text-align: center;
 
   .name {
     font-weight: 500;
@@ -108,7 +135,7 @@ body {
   }
 
   .tagline {
-    font-size: @medium-font-size;
+    .medium-font-size();
     font-weight: 100;
     margin: 10px;
   }
@@ -178,7 +205,8 @@ body {
   }
 
   .body-text {
-    font-size: @medium-font-size;
+    .medium-font-size();
+    text-align: center;
   }
 }
 
@@ -231,13 +259,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: @medium-font-size;
+    .medium-font-size();
     max-width: 450px;
     padding-right: @content-padding;
     .title {
       font-weight: 700;
     }
-    .text {
+    .body-text {
       font-weight: 300;
     }
     .phone-number {
@@ -250,7 +278,7 @@ body {
     padding: @content-padding;
     padding-top: @content-padding + 10px;
     .title {
-      font-size: @medium-font-size;
+      .medium-font-size();
       font-weight: 700;
       color: white;
       display: flex;
@@ -281,6 +309,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  .body-font-size();
   align-items: center;
 }
 
@@ -473,6 +502,10 @@ body {
     top: 0;
   }
 
+  .body-text {
+    padding: 0 @content-padding/2;
+  }
+
   .about {
     flex-direction: column;
     align-items: center;
@@ -490,6 +523,26 @@ body {
     }
     &.midy {
       flex-direction: column-reverse;
+    }
+  }
+
+  .learn-more {
+      width: 80%;
+      height: 100px;
+  }
+
+  .double {
+    flex-direction: column;
+    .appointment {
+      max-width: unset;
+      .body-text {
+        text-align: center;
+      }
+    }
+    .hours {
+      .body-text {
+        text-align: center;
+      }
     }
   }
 }

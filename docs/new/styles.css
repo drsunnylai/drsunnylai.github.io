@@ -11,10 +11,20 @@ body {
   font-weight: 700;
   font-size: 40px;
 }
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .title-text {
+    font-size: 60px;
+  }
+}
 .body-text {
   color: #112d39;
   font-size: 18px;
   font-weight: 300;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .body-text {
+    font-size: 32px;
+  }
 }
 .anchor {
   position: absolute;
@@ -34,7 +44,13 @@ body {
   align-items: center;
   font-weight: 300;
   transition: background-color 0.3s;
+  font-size: 18px;
   color: white;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .learn-more {
+    font-size: 32px;
+  }
 }
 .learn-more a {
   color: white;
@@ -77,6 +93,7 @@ body {
   align-items: center;
   position: relative;
   color: white;
+  text-align: center;
 }
 .title-bar .name {
   font-weight: 500;
@@ -87,6 +104,11 @@ body {
   font-size: 28px;
   font-weight: 100;
   margin: 10px;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .title-bar .tagline {
+    font-size: 45px;
+  }
 }
 .about {
   flex-direction: row;
@@ -149,6 +171,12 @@ body {
 }
 .services .body-text {
   font-size: 28px;
+  text-align: center;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .services .body-text {
+    font-size: 45px;
+  }
 }
 .reviews {
   position: relative;
@@ -201,10 +229,15 @@ body {
   max-width: 450px;
   padding-right: 30px;
 }
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .double .appointment {
+    font-size: 45px;
+  }
+}
 .double .appointment .title {
   font-weight: 700;
 }
-.double .appointment .text {
+.double .appointment .body-text {
   font-weight: 300;
 }
 .double .appointment .phone-number {
@@ -223,6 +256,11 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .double .hours .title {
+    font-size: 45px;
+  }
 }
 .double .hours .body-text > * {
   margin: 15px 0;
@@ -243,7 +281,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 18px;
   align-items: center;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .footer {
+    font-size: 32px;
+  }
 }
 .top-bar {
   position: fixed;
@@ -393,6 +437,9 @@ body {
   .anchor {
     top: 0;
   }
+  .body-text {
+    padding: 0 15px;
+  }
   .about {
     flex-direction: column;
     align-items: center;
@@ -411,5 +458,21 @@ body {
   }
   .about.midy {
     flex-direction: column-reverse;
+  }
+  .learn-more {
+    width: 80%;
+    height: 100px;
+  }
+  .double {
+    flex-direction: column;
+  }
+  .double .appointment {
+    max-width: unset;
+  }
+  .double .appointment .body-text {
+    text-align: center;
+  }
+  .double .hours .body-text {
+    text-align: center;
   }
 }

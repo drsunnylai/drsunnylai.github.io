@@ -1,68 +1,348 @@
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
+html {
+  scroll-behavior: smooth;
 }
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+body {
+  font-family: Roboto;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
 }
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
+.title-text {
+  color: #1d9da8;
+  font-weight: 700;
+  font-size: 40px;
 }
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .title-text {
+    font-size: 60px;
+  }
 }
-.footer {
-  background-color: black;
+.body-text {
+  color: #112d39;
+  font-size: 18px;
+  font-weight: 300;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .body-text {
+    font-size: 32px;
+  }
+}
+.anchor {
+  position: absolute;
+  top: -75px;
+}
+.anchor .top {
+  top: 0;
+}
+.learn-more {
+  cursor: pointer;
+  width: 270px;
+  height: 50px;
+  background-color: #1d9da8;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  transition: background-color 0.3s;
+  font-size: 18px;
+  color: white;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .learn-more {
+    font-size: 32px;
+  }
+}
+.learn-more a {
+  color: white;
+  text-decoration: none;
+}
+.learn-more:hover {
+  background-color: #105359;
+}
+/* Put <div class="overlay"></div> inside elements that should
+ * have an overlay. Remember to make parent position: relative
+ */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(28, 124, 138, 0.75);
+  z-index: 0;
+}
+.overlay ~ * {
+  z-index: 1;
+}
+.content {
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.title-bar {
+  padding: 10px;
+  background-image: url("assets/title_image.jpg");
+  background-size: cover;
+  display: flex;
+  margin-top: 75px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+.title-bar .name {
+  font-weight: 500;
+  font-size: 58px;
+  margin: 10px;
+}
+.title-bar .tagline {
+  font-size: 28px;
+  font-weight: 100;
+  margin: 10px;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .title-bar .tagline {
+    font-size: 45px;
+  }
+}
+.about {
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 0;
+}
+.about .title-text {
+  margin-bottom: 30px;
+}
+.about .face {
+  align-self: flex-end;
+}
+.about .text {
+  display: flex;
+  flex-direction: column;
+}
+.about .text .body-text {
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+.about .text .reverse-box {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 30px;
+}
+.about .text .reverse-box .more-text {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.about .text .reverse-box .more-text .memberships {
+  margin-top: 30px;
+}
+.about .text .reverse-box .checkbox {
+  display: none;
+}
+.about .text .reverse-box .checkbox:checked + .more-text {
+  max-height: 500px;
+}
+.spacer-bar {
+  width: 100%;
+  height: 25px;
+  position: relative;
+  background-image: url("assets/thin_bar.webp");
+  background-size: cover;
+}
+.services {
+  background-color: #f5f5f5;
+}
+.services .services-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 741px;
+  padding: 15px 0;
+}
+.services .services-list .service {
+  margin: 5px;
+}
+.services .services-list .service img {
+  height: 237px;
+  width: 237px;
+}
+.services .body-text {
+  font-size: 28px;
+  text-align: center;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .services .body-text {
+    font-size: 45px;
+  }
+}
+.reviews {
+  position: relative;
+  background-image: url("assets/thicker_bar.webp");
+  background-size: cover;
+}
+.reviews .title-text {
+  color: white;
+  margin: 15px;
+}
+.reviews .body-text {
+  color: white;
+  margin: 15px;
+}
+.reviews .learn-more {
+  color: white;
+  margin: 15px;
+}
+.memberships {
+  padding-bottom: 0;
+}
+.memberships .memberships-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  align-items: center;
+  justify-content: center;
+}
+.memberships .memberships-list .membership {
+  margin: 30px;
+}
+.memberships:after {
+  width: 1000px;
+  border-bottom: 1px solid #828282;
+  content: "";
+  padding-top: 30px;
+}
+.double {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+.double .appointment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  max-width: 450px;
+  padding-right: 30px;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .double .appointment {
+    font-size: 45px;
+  }
+}
+.double .appointment .title {
+  font-weight: 700;
+}
+.double .appointment .body-text {
+  font-weight: 300;
+}
+.double .appointment .phone-number {
+  margin: 15px;
+  color: black;
+}
+.double .hours {
+  background-color: #1d9da8;
+  padding: 30px;
+  padding-top: 40px;
+}
+.double .hours .title {
+  font-size: 28px;
+  font-weight: 700;
   color: white;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  font-size: 20px;
+  margin-bottom: 15px;
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .double .hours .title {
+    font-size: 45px;
+  }
+}
+.double .hours .body-text > * {
+  margin: 15px 0;
+  color: white;
+}
+.double .hours .body-text .name {
+  font-weight: 700;
+  color: white;
+}
+.double .hours .body-text .name a {
+  color: white;
+}
+.footer {
+  background-color: #1d9da8;
+  color: white;
+  font-family: "Lato";
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 18px;
+  align-items: center;
 }
 @media all and (orientation: portrait), (max-width: 1350px) {
   .footer {
-    font-size: 30px;
+    font-size: 32px;
   }
 }
-.footer .item {
-  margin: 15px;
-}
-.footer .item > * {
-  color: white;
-}
 .top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  height: 50px;
-  background-color: black;
+  height: 75px;
+  background-color: white;
+  border-bottom: 2px solid #dcdcdc;
   padding: 0 20px;
   box-sizing: border-box;
+}
+.top-bar .title-card {
+  position: absolute;
+  top: 37.5px;
+  transform: translate(0, -50%);
+  left: 30px;
+  display: flex;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.top-bar .title-card .name {
+  font-family: "Roboto";
+  color: #618695;
+}
+.top-bar .title-card .line {
+  margin: 0 3px;
+  color: #618695;
+}
+.top-bar .title-card .description {
+  font-family: "Lato";
+  color: #1d9da8;
 }
 .top-bar .menu-toggle .checkbox {
   display: none;
 }
 .top-bar .menu-toggle .menu li {
   display: inline;
-  font-size: 20px;
-}
-@media all and (orientation: portrait), (max-width: 1350px) {
-  .top-bar .menu-toggle .menu li {
-    font-size: 30px;
-  }
 }
 .top-bar .menu-toggle .menu li .button {
   cursor: pointer;
   margin: 0px 20px;
-  color: white;
+  color: #105359;
   text-decoration: none;
 }
 .top-bar .menu-toggle .menu li .button:hover {
-  text-decoration: underline;
+  color: #1d9da8;
 }
 @media all and (orientation: portrait), (max-width: 1350px) {
   .top-bar {
@@ -70,6 +350,9 @@
     justify-content: flex-start;
     align-items: flex-start;
     height: 0;
+  }
+  .top-bar .title-card {
+    display: none;
   }
   .top-bar .menu-toggle {
     display: block;
@@ -116,7 +399,7 @@
     margin: -120px 0 0 -100px;
     padding: 50px;
     padding-top: 125px;
-    background: black;
+    background: white;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
@@ -131,6 +414,7 @@
   }
   .top-bar .menu-toggle .menu li .button {
     font-size: 40px;
+    color: black;
   }
   .top-bar .menu-toggle .line {
     display: block;
@@ -150,257 +434,48 @@
   .top-bar .menu-toggle .line:nth-last-child(2) {
     transform-origin: 0% 100%;
   }
-}
-html,
-body {
-  text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  font-family: 'Montserrat', sans-serif;
-  color: #2b323b;
-  background-color: #f5f5f5;
-}
-a {
-  text-decoration: none;
-}
-.body {
-  margin: 0;
-}
-.body .header-container {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-}
-.body .content-container {
-  margin-top: 50px;
-  min-height: 100vh;
-}
-.body .content-container .home-page .title-container {
-  position: relative;
-  width: 100%;
-  height: 60%;
-  font-weight: bolder;
-}
-.body .content-container .home-page .title-container .title-image {
-  width: 100%;
-  height: 100%;
-  background-image: url('assets/title.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-}
-.body .content-container .home-page .title-container .title-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 75px 250px;
-  border: 3px solid white;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-}
-.body .content-container .home-page .title-container .title-text .title-name {
-  z-index: 1;
-  white-space: nowrap;
-  font-size: 72px;
-  font-weight: bold;
-}
-@media all and (orientation: portrait), (max-width: 1350px) {
-  .body .content-container .home-page .title-container .title-text .title-name {
-    font-size: 60px;
-  }
-}
-.body .content-container .home-page .title-container .title-text .title-desc {
-  margin-top: 30px;
-  font-size: 40px;
-}
-@media all and (orientation: portrait), (max-width: 1350px) {
-  .body .content-container .home-page .title-container .title-text .title-desc {
-    font-size: 40px;
-  }
-}
-.body .content-container .home-page .title-container .title-text .title-headshot {
-  height: 330px;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-}
-.body .content-container .home-page .home-content .content {
-  padding: 100px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.body .content-container .home-page .home-content .content .title {
-  font-size: 40px;
-  color: #25477b;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-@media all and (orientation: portrait), (max-width: 1350px) {
-  .body .content-container .home-page .home-content .content .title {
-    font-size: 40px;
-  }
-}
-.body .content-container .home-page .home-content .content .text {
-  font-size: 20px;
-  max-width: 950px;
-  text-align: justify;
-}
-@media all and (orientation: portrait), (max-width: 1350px) {
-  .body .content-container .home-page .home-content .content .text {
-    font-size: 30px;
-  }
-}
-.body .content-container .home-page .home-content .content:nth-child(odd) {
-  background-color: #f5f5f5;
-}
-.body .content-container .home-page .home-content .content:nth-child(even) {
-  background-color: white;
-}
-.body .content-container .home-page .home-content .content .button {
-  background-color: #25477b;
-  border-radius: 3px;
-  padding: 10px;
-  cursor: pointer;
-  color: white;
-  padding: 10px 50px;
-  text-align: center;
-  width: 300px;
-  text-decoration: none;
-  white-space: nowrap;
-  margin-top: 15px;
-}
-.body .content-container .home-page .home-content .content .button:hover {
-  background-color: #148ac4;
-}
-.body .content-container .home-page .home-content .appointment-contact {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-around;
-}
-.body .content-container .home-page .home-content .appointment-contact .half {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-.body .content-container .home-page .home-content .appointment-contact .appointment .appointments-and-instructions .inline-phone-number {
-  white-space: nowrap;
-}
-.body .content-container .home-page .home-content .appointment-contact .contact .items {
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-}
-@media all and (orientation: portrait), (max-width: 1350px) {
-  .body .content-container .home-page .home-content .appointment-contact .contact .items {
-    font-size: 30px;
-  }
-}
-.body .content-container .home-page .home-content .appointment-contact .contact .items .row {
-  display: flex;
-  align-items: space-between;
-  margin-bottom: 20px;
-}
-.body .content-container .home-page .home-content .appointment-contact .contact .items .row .icon {
-  height: 30px;
-}
-.body .content-container .home-page .home-content .appointment-contact .contact .items .row .locations {
-  display: flex;
-  flex-direction: column;
-}
-.body .content-container .home-page .home-content .appointment-contact .contact .items .row .locations .location:first-child {
-  margin-bottom: 30px;
-}
-.body .content-container .home-page .home-content .appointment-contact .contact .items .row .locations .location .address {
-  text-align: left;
-}
-.body .content-container .home-page .home-content .services .services-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.body .content-container .home-page .home-content .services .services-list .service {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background-color: white;
-  border-radius: 3px;
-  box-sizing: border-box;
-  padding: 10px 30px;
-  width: 20vw;
-  height: 150px;
-  margin: 30px 6vw;
-  font-size: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-@media all and (orientation: portrait), (max-width: 1350px) {
-  .body .content-container .home-page .home-content .services .services-list .service {
-    font-size: 30px;
-  }
-}
-.body .content-container .home-page .home-content .services .services-list .service .checkmark {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 40px;
-}
-.body .content-container .home-page .home-content .services .languages {
-  margin-top: 30px;
-}
-@media all and (orientation: portrait), (max-width: 1350px) {
-  .body .header-container {
-    height: 100%;
-    width: initial;
-  }
-  .body .content-container {
+  .title-bar {
     margin-top: 0;
   }
-  .body .content-container .home-page .title-container {
-    height: 80%;
+  .anchor {
+    top: 0;
   }
-  .body .content-container .home-page .title-container .title-text {
-    width: 95%;
-    padding: 75px 0;
-    transform: translate(-50%, -25%);
+  .body-text {
+    padding: 0 15px;
   }
-  .body .content-container .home-page .home-content .services .services-list .service {
-    width: 35vw;
-  }
-  .body .content-container .home-page .home-content .content .button {
-    font-size: 40px;
-    width: 60%;
-  }
-  .body .content-container .home-page .home-content .appointment-contact {
+  .about {
     flex-direction: column;
     align-items: center;
-    padding: 0;
   }
-  .body .content-container .home-page .home-content .appointment-contact .appointment {
-    padding: 100px 0;
+  .about .face {
+    align-self: center;
   }
-  .body .content-container .home-page .home-content .appointment-contact .contact {
-    background-color: white;
-    width: 100%;
-    padding: 100px 0;
+  .about .text {
+    align-items: center;
   }
-}
-@media all and (orientation: portrait) and all and (orientation: portrait), (max-width: 1350px) and all and (orientation: portrait), all and (orientation: portrait) and (max-width: 1350px), (max-width: 1350px) and (max-width: 1350px) {
-  .body .content-container .home-page .home-content .content .button {
-    font-size: 40px;
+  .about .text .body-text {
+    max-width: unset;
+  }
+  .about .text .reverse-box {
+    align-items: center;
+  }
+  .about.midy {
+    flex-direction: column-reverse;
+  }
+  .learn-more {
+    width: 80%;
+    height: 100px;
+  }
+  .double {
+    flex-direction: column;
+  }
+  .double .appointment {
+    max-width: unset;
+  }
+  .double .appointment .body-text {
+    text-align: center;
+  }
+  .double .hours .body-text {
+    text-align: center;
   }
 }

@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="tour.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <script src="tour.js"></script>
+    <title> Dr. Sunny Lai - Office Tour </title>
+  </head>
+  <body class="body">
+    <div class="header-container">
+      <nav class="top-bar" role="navigation">
+        <div class="menu-toggle">
+         
+          <input class="checkbox" type="checkbox"/>
+          
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          
+          <ul class="menu">
+            <li>
+              <a href="index.html" class="button">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="hours.html" class="button">
+                Hours
+              </a>
+            </li>
+            <li>
+              <a href="tour.html" class="button">
+                Office Tour
+              </a>
+            </li>
+            <li>
+            <a href="about.html" class="button">
+              About
+            </a>
+          </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="content-container">
+      <div class="slideshow-container">
+        <div class="button left" onclick="left()">
+          <i class="left-arrow"></i>
+        </div>
+        <div class="visible-container">
+          <div id="images" class="images">
+            <img class="image" src="assets/dsl_office1.jpg"/>
+            <img class="image" src="assets/dsl_office2.jpg"/>
+            <img class="image" src="assets/dsl_office3.jpg"/>
+            <img class="image" src="assets/dsl_office4.jpg"/>
+          </div>
+        </div>
+        <div class="button right" onclick="right()">
+          <i class="right-arrow"></i>
+        </div>
+        <div class="dots">
+          <div class="dot selected" onclick="setImage(0)"></div>
+          <div class="dot" onclick="setImage(1)"></div>
+          <div class="dot" onclick="setImage(2)"></div>
+          <div class="dot" onclick="setImage(3)"></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-container">
+      <div class="footer">
+      <div class="item">
+        Dr. Sunny Lai, Podiatrist - Podiatric Medicine and Surgery
+      </div>
+      <div class="item">
+        Copyright 2020. drsunnylai.com
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

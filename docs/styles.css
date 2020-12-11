@@ -147,7 +147,7 @@ body {
   display: none;
 }
 .about .text .reverse-box .checkbox:checked + .more-text {
-  max-height: 500px;
+  max-height: 1000px;
 }
 .spacer-bar {
   width: 100%;

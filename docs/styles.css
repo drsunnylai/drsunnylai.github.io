@@ -110,6 +110,9 @@ body {
     font-size: 45px;
   }
 }
+.title-bar .tagline .nobreak {
+  white-space: nowrap;
+}
 .about {
   flex-direction: row;
   justify-content: center;

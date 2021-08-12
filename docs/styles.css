@@ -250,6 +250,9 @@ body {
   margin: 15px;
   color: black;
 }
+.double .appointment .book-button {
+  margin: 20px 0px;
+}
 .double .hours {
   background-color: #1d9da8;
   padding: 30px;
@@ -466,7 +469,7 @@ body {
     flex-direction: column-reverse;
   }
   .learn-more {
-    width: 80%;
+    width: 80vw;
     height: 100px;
   }
   .double {

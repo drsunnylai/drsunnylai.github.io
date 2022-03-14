@@ -249,6 +249,7 @@ body {
 .double .appointment .phone-number {
   margin: 15px;
   color: black;
+  text-decoration: none;
 }
 .double .appointment .book-button {
   margin: 20px 0px;

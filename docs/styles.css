@@ -6,6 +6,12 @@ body {
   -webkit-text-size-adjust: 100%;
   margin: 0;
 }
+ul {
+  margin: 0;
+}
+.extra-space {
+  margin-top: 40px;
+}
 .title-text {
   color: #1d9da8;
   font-weight: 700;
@@ -87,6 +93,7 @@ body {
   background-size: cover;
   display: flex;
   margin-top: 75px;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
   flex-direction: column;
@@ -154,7 +161,7 @@ body {
 }
 .spacer-bar {
   width: 100%;
-  height: 25px;
+  height: 40px;
   position: relative;
   background-image: url("assets/thin_bar.webp");
   background-size: cover;
@@ -187,6 +194,7 @@ body {
 .reviews {
   position: relative;
   background-image: url("assets/thicker_bar.webp");
+  background-attachment: fixed; 
   background-size: cover;
   padding: 90px 0;
 }
@@ -243,6 +251,7 @@ body {
 }
 .double .appointment .title {
   font-weight: 700;
+  margin: 20px 0;
 }
 .double .appointment .body-text {
   font-weight: 300;
@@ -259,6 +268,7 @@ body {
   background-color: #1d9da8;
   padding: 30px;
   padding-top: 40px;
+  max-width: 450px;
 }
 .double .hours .title {
   font-size: 28px;
@@ -271,6 +281,11 @@ body {
 @media all and (orientation: portrait), (max-width: 1350px) {
   .double .hours .title {
     font-size: 45px;
+  }
+}
+@media all and (orientation: portrait), (max-width: 1350px) {
+  .double .hours {
+    margin-top: 20px;
   }
 }
 .double .hours .body-text > * {
@@ -478,6 +493,9 @@ body {
     flex-direction: column;
   }
   .double .appointment {
+    max-width: unset;
+  }
+  .double .hours {
     max-width: unset;
   }
   .double .appointment .body-text {
